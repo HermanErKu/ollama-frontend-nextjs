@@ -26,7 +26,39 @@ const Chat = () => {
         fetchModels();
     }, [])
 
-    console.log(models.map(model => model.name));
+
+
+    const [data, setData] = useState<string>("");
+    const askModel = async () => {
+        const response = await fetch("http://localhost:11434/api/generate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                prompt: message,
+                model: selectedModel
+            })
+        });
+    
+        const reader = response.body?.getReader();
+        const decoder = new TextDecoder("utf-8");
+        let data = '';
+    
+        if (reader) {
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                data += decoder.decode(value, { stream: true });
+                const dataResponses = data.split('"response":"');
+                let string = "";
+                for (let i = 1; i < dataResponses.length; i++) {
+                    string += dataResponses[i].split('","')[0];
+                }
+                setData(string);
+            }
+        }
+    };
 
     return (
         <div className="flex">
@@ -39,11 +71,13 @@ const Chat = () => {
                     </SelectContent>
             </Select>
 
-            
+
+            <p className="">{data}</p>
+
 
             <div className="flex fixed bottom-[100px] left-0 right-0 justify-center gap-4">
                 <Input placeholder="Spør meg om hva som helst..." value={message} onChange={(e) => setMessage(e.target.value)} className="w-[70vw]"/>
-                <Button>Send</Button>
+                <Button onClick={askModel}>Send</Button>
             </div>
         </div>
     )
