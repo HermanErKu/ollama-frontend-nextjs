@@ -4,11 +4,6 @@ import { Input } from "./ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, } from "@/components/ui/select"
 
 
-//models response
-// make this a type
-
-
-
 const Chat = () => {
     const [message, setMessage] = useState<string>("");  
 
@@ -61,18 +56,22 @@ const Chat = () => {
     };
 
     return (
-        <div className="flex">
-            <Select onValueChange={(value) => setSelectedModel(value)}>
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Velg modell" />
-                </SelectTrigger>
-                <SelectContent>
-                    {!!models.length ? models.map(model => <SelectItem key={model.name} value={model.name}>{model.name}</SelectItem>) : <p>Fant ingen modeller</p>}
-                    </SelectContent>
-            </Select>
+        <div className="">
+            <div className="flext flex-row gap-4 pt-2 justify-center self-center">
+                <Select onValueChange={(value) => setSelectedModel(value)}>
+                    <SelectTrigger className="w-[180px]">
+                        <SelectValue placeholder="Velg modell" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        {!!models.length ? models.map(model => <SelectItem key={model.name} value={model.name}>{model.name}</SelectItem>) : <p>Fant ingen modeller</p>}
+                        </SelectContent>
+                </Select>
+            </div>
 
 
-            <p className="">{data}</p>
+            <div className="w-full m-10 overflow-y-auto">
+                <p className="">{data}</p>
+            </div>
 
 
             <div className="flex fixed bottom-[100px] left-0 right-0 justify-center gap-4">

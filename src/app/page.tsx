@@ -8,7 +8,7 @@ import Chat from "@/components/Chat";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen flex flex-col items-center">
+    <div className="w-screen flex flex-col items-center">
       <Header />
 
       <Chat />
