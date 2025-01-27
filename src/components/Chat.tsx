@@ -9,8 +9,10 @@ const Chat = () => {
     return (
         <div className="flex">
 
-            <Input value={message} onChange={(e) => setMessage(e.target.value)} className="w-[70vw]"/>
-            <Button>Send</Button>
+            <div className="flex fixed bottom-[100px] left-0 right-0 justify-center gap-4">
+                <Input placeholder="Spør meg om hva som helst..." value={message} onChange={(e) => setMessage(e.target.value)} className="w-[70vw]"/>
+                <Button>Send</Button>
+            </div>
         </div>
     )
 }
