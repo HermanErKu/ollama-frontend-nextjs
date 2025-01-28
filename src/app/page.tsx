@@ -1,18 +1,14 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Chat from "@/components/Chat";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <div className="w-screen flex flex-col items-center">
-      <Header />
+const Page = () => {
+  const router = useRouter();
 
-      <Chat />
+  useEffect(() => {
+    router.push('/home');
+  }, [router]);
+};
 
-
-      <Footer />
-    </div>
-  );
-}
+export default Page;
