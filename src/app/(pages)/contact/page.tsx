@@ -30,7 +30,7 @@ export default function Home() {
           <div className="w-24 h-24 rounded-3xl mb-4 bg-gray-900"></div>
           <h3 className="text-lg font-bold">Odin</h3>
           <p className="text-sm">Creator</p>
-          <a href="https://github.com/odin" className="text-gray-600 hover:text-gray-700">GitHub</a>
+          <a href="https://github.com/melyguy" className="text-gray-600 hover:text-gray-700">GitHub</a>
           <a href="#odin" className="text-gray-600 hover:text-gray-700">More Info & Portfolio</a>
         </div>
       </div>
