@@ -96,7 +96,7 @@ const Chat = () => {
 
             <div className="flex left-0 right-0 justify-center gap-4">
                 <div className="relative">
-                    <Input placeholder="Spør meg om hva som helst..." value={message} onChange={(e) => setMessage(e.target.value)} onKeyPress={(e) => {if (e.key === 'Enter') {askModel()}}} className="w-[30vw] focus:w-[50vw] transform-width duration-500 bg-gray-50 border border-gray-800 rounded-md focus:outline-none focus:border-none"/>
+                    <Input placeholder="Spør meg om hva som helst..." value={message} onChange={(e) => setMessage(e.target.value)} className="w-[30vw] focus:w-[50vw] transition-width duration-500 bg-gray-50 border border-gray-800 rounded-md focus:outline-none focus:border-none"/>
                     <span className="bg-gray-50 pl-1 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-800 text-xs">{message.length} / 1000</span>
                 </div>
                 <Button onClick={askModel}>Send</Button>
