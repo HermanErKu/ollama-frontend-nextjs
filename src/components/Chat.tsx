@@ -17,8 +17,8 @@ const Chat = () => {
     const [loadingAnimation, setLoadingAnimation] = useState<boolean>(false);
 
     const fetchModels = async () => {
-        //const response = await fetch("http://localhost:11434/api/tags");
-        const response = await fetch("http://172.16.100.151:11434/api/tags");
+        const response = await fetch("http://localhost:11434/api/tags");
+        // const response = await fetch("http://172.16.100.151:11434/api/tags");
         const data = await response.json();
 
         setModels(data.models);
@@ -37,8 +37,8 @@ const Chat = () => {
         setCurrentTimeStamp(new Date().toISOString().slice(11, 16));
         
         try {
-            //const response = await fetch("http://localhost:11434/api/generate", {
-            const response = await fetch("http://172.16.100.151:11434/api/generate", {
+            const response = await fetch("http://localhost:11434/api/generate", {
+            //const response = await fetch("http://172.16.100.151:11434/api/generate", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
