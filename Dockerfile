@@ -1,13 +1,13 @@
-FROM oven/bun:alpine
+FROM node:alpine
 
 WORKDIR /app
 
-COPY package.json bun.lockb* ./
+COPY package.json yarn.lock ./
 
-RUN bun install
+RUN yarn install --frozen-lockfile
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["bun", "run", "dev"]
+CMD ["yarn", "start"]
