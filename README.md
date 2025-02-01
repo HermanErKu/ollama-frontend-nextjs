@@ -18,7 +18,7 @@ ToDo:
 - [ ] Code completion
 - [ ] Chat mode
 - [ ] Formatting LLM responses
-- [ ] Working Dockerfile and docker-compose
+- [X] Working Dockerfile and docker-compose
 
 
 
