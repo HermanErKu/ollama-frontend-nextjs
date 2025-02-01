@@ -8,12 +8,9 @@ The server will be using [Ollama](https://ollama.com/) as a runner for the LLM m
 
 ## Features
 
-Finished features:
-
-- Text completion
-
 ToDo:
 
+- [X] Text completion
 - [ ] Login with authentication
 - [ ] Code completion
 - [ ] Chat mode
@@ -24,11 +21,8 @@ ToDo:
 
 ## Getting started
 
-Step-by-step installation guide using [Bun](https://bun.sh/).
+Step-by-step installation guide using [Yarn](https://yarnpkg.com/).
 
-### Prerequisites
-
-You will need to have [Ollama](https://ollama.com/download) installed and started on you computer / server.
 
 ### Installing the project
 
@@ -37,7 +31,7 @@ You will need to have [Ollama](https://ollama.com/download) installed and starte
 
 Steps to run the development frontend server:
 
-This requires that ollama is already running on your localhost:11434
+This requires that you have [Ollama](https://ollama.com/download) downloaded and running on your localhost:11434
 
 ```bash
 # Clone the repository
