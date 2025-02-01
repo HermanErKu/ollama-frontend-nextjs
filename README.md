@@ -32,9 +32,12 @@ You will need to have [Ollama](https://ollama.com/download) installed and starte
 
 ### Installing the project
 
-Steps to run the development frontend server:
 
 #### Installing project and packages
+
+Steps to run the development frontend server:
+
+This requires that ollama is already running on your localhost:11434
 
 ```bash
 # Clone the repository
@@ -44,16 +47,28 @@ git clone https://github.com/HermanErKu/ollama-frontend-nextjs.git
 cd ollama-frontend-nextjs
 
 # Install dependencies
-bun install
+yarn install
 
 # Run the development server
-bun run dev
+yarn dev
 ```
 
 #### Installing project using dockerfile
 
-Dockerfile will be finished soon
+This will require Docker installed on you server/computer.
 
+By running the program with the included docker-compose file, the ollama server will start for you. This makes this solution the easiest way to intall.
+
+``` bash
+# Clone the repository
+git clone https://github.com/HermanErKu/ollama-frontend-nextjs.git
+
+# Navigate to the project repository
+cd ollama-frontend-nextjs
+
+# Run the docker container
+docker compose up --build
+```
 
 
 ## Contribution
